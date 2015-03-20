@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>README.md - Grip</title>
+  <link rel="icon" href="http://localhost:5000/grip-static/favicon.ico"><link rel="stylesheet" href="http://localhost:5000/grip-cache/github-94520383be830bbbe79cdce9fb3f76d4037ec1ca67d72952e14a36b8c2362b55.css">
+  <link rel="stylesheet" href="http://localhost:5000/grip-cache/github2-9464c22b2a91bc6a645005fea4347a43672ae879419c4d60808c39bcf2b68748.css">
+  <style>
+    /* Page tweaks */
+    .preview-page {
+      margin-top: 64px;
+    }
+    /* Discussion tweaks */
+    .discussion-timeline.wide {
+      width: 920px;
+    }
+    .timeline-comment-wrapper > .timeline-comment:after,
+    .timeline-comment-wrapper > .timeline-comment:before {
+      content: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="preview-page">
+    <div class="container">
+      <div class="repository-with-sidebar repo-container with-full-navigation">
+
+        
+          <div class="repository-content context-loader-container">
+            <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+              
+                <h3>
+                  <span class="octicon octicon-book"></span>
+                  README.md
+                </h3>
+              
+              <div class="markdown-body entry-content">
+                
+
+<h1>
+<a id="user-content-akshay-srivatsans-calculator" class="anchor" href="http://localhost:5000/#akshay-srivatsans-calculator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Akshay Srivatsan's Calculator</h1>
+
+<p><strong>Important: This program runs on Python 2.7 (the default on Mac OS X). It does not run on Python 3.</strong></p>
+
+<h2>
+<a id="user-content-table-of-contents" class="anchor" href="http://localhost:5000/#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of Contents:</h2>
+
+<ol>
+<li>Standard Operation
+
+<ul>
+<li>Running</li>
+<li>User Input</li>
+<li>Output</li>
+<li>Variables and Aliases</li>
+</ul>
+</li>
+<li>
+<p>Special Features</p>
+
+<ul>
+<li>Table</li>
+<li>Graph, Simple and Complex Modes</li>
+<li>Derivative</li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="user-content-1-standard-operation" class="anchor" href="http://localhost:5000/#1-standard-operation" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Standard Operation</h2>
+
+<h3>
+<a id="user-content-running" class="anchor" href="http://localhost:5000/#running" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running</h3>
+
+<p>To run this program, double-click <code>calculator.pyc</code> in Finder/Windows Explorer, or type <code>python calculator.pyc</code> at Terminal or Command Prompt.
+Make sure that your computer is set to use <strong>Python 2</strong> by default, <strong>not Python 3</strong>.</p>
+
+<h3>
+<a id="user-content-user-input" class="anchor" href="http://localhost:5000/#user-input" aria-hidden="true"><span class="octicon octicon-link"></span></a>User Input</h3>
+
+<p>My calculator is designed to accept input in the most traditional text-based form (the form that is understood by Google Search).
+This means that I had to make minor changes to normal Python math syntax: for example, I replaced <code>**</code> with <code>^</code> for exponentiation.
+The regular Python syntax will still work in most cases.
+Functions from Python's <code>math</code> module (like <code>log</code> and <code>sin</code>) will, for the most part, work in my calculator.</p>
+
+<p>The commands <code>quit</code> and <code>exit</code> will end the program.</p>
+
+<p>I have programmed this calculator to interpret user input in the most logical way (using Python's <code>eval</code> function to determine the order of operations), but properly parenthesized input has a much higher chance of being interpreted correctly than unparenthesized input.
+For example, <code>-10^2</code> evaluates to <code>-100</code>, since it is parsed as <code>-(10^2)</code>. To get <code>100</code>, enter <code>(-10)^2</code>.</p>
+
+<p>Fractions can be entered as <code>X/Y</code>, while mixed numbers can be entered as <code>W X/Y</code>.
+For the best results, surround fractions and mixed numbers with parentheses.
+If the numerator or denominator of a fraction contains a float or a parenthesized expression, it will be interpreted as division.
+If any part of a mixed number contains a float, it will be corrected into a proper mixed number.</p>
+
+<p>I have used Python's <code>readline</code> library to allow more user-friendly input (including working arrow keys).</p>
+
+<p>The parser is designed to accept decimal, but will also accept binary, octal, and hexadecimal using Python's <code>eval</code> function.
+These are the ways you can enter a number (in this case <code>42</code>) in different bases:</p>
+
+<ul>
+<li>
+<code>0b101010</code> (Binary - Base 2)</li>
+<li>
+<code>052</code> (Octal - Base 8)</li>
+<li>
+<code>0x2A</code> (Hexadecimal - Base 16)</li>
+</ul>
+
+<p>Input in bases other than 10 is not guaranteed to work in all scenarios. Again, there is a greater chance of your input being interpreted correctly if it is properly parenthesized.</p>
+
+<h3>
+<a id="user-content-output" class="anchor" href="http://localhost:5000/#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output</h3>
+
+<p>Output will typically be in the same form as the input: fractions will be printed as <code>(X/Y)</code>, and mixed numbers as <code>(W X/Y)</code>.
+If the input is invalid, the program will print an error message (possibly accompanied by the location of the error).
+<em>(The location of the error is approximate, and may not be accurate for very complex inputs.)</em></p>
+
+<p>Output will always be in base 10, but can be converted to other bases using the functions <code>bin</code>, <code>oct</code>, and <code>hex</code>.</p>
+
+<h3>
+<a id="user-content-variables-and-aliases" class="anchor" href="http://localhost:5000/#variables-and-aliases" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables and Aliases</h3>
+
+<p>This calculator also supports named variables and aliases.
+The difference between these is that variables are numbers which are parsed when stored, while aliases are strings which are expanded when they are used.
+Custom variables and aliases must have names that begin with <code>_</code>. This is to avoid the variable name from clashing with a function name.</p>
+
+<p>The syntax for assigning variables is <code>_x = 10</code>.
+This sets the variable <code>_x</code> to <code>10</code>.</p>
+
+<p>The syntax for assigning aliases is <code>_3x := 3*</code>.
+This sets the alias <code>_3x</code> to the string <code>3*</code></p>
+
+<p>Built in variables and aliases include:</p>
+
+<ul>
+<li><code>_pi = 3.141592653589793</code></li>
+<li><code>_e = 2.718281828459045</code></li>
+<li><code>E := *10^</code></li>
+</ul>
+
+<p>In addition, <code>_ans</code> always evaluates to the answer to the previous expression.</p>
+
+<p>Variables can be deleted by setting them to nothing (<code>x =</code>).
+The command <code>variables</code> will print out all currently defined variables.</p>
+
+<h2>
+<a id="user-content-2-special-features" class="anchor" href="http://localhost:5000/#2-special-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Special Features</h2>
+
+<p>I have added some extra features to this calculator. A full list can be found by typing <code>help</code> at the prompt. They include:</p>
+
+<ul>
+<li>
+<code>table</code>:      prints out a table of values.</li>
+<li>
+<code>graph</code>:      graphs the values (as best as it can, since this is on the command-line).</li>
+<li>
+<code>simple</code>:     puts the graph into simple mode.</li>
+<li>
+<code>complex</code>:    puts the graph into complex mode.</li>
+<li>
+<code>variables</code>:  prints out all currently defined variables.</li>
+<li>
+<code>derivative</code>: takes the derivative of a function at a point.</li>
+</ul>
+
+<h3>
+<a id="user-content-table" class="anchor" href="http://localhost:5000/#table" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table</h3>
+
+<p>This function prompts for:</p>
+
+<ul>
+<li>An expression</li>
+<li>The independent variable in the expression (this variable name does not have to begin with an underscore)</li>
+<li>The starting value</li>
+<li>The ending value</li>
+<li>The step size</li>
+</ul>
+
+<p>It prints out a table of values for the expression with the specified characteristics.</p>
+
+<p>An example of its use is:</p>
+
+<pre><code>Enter an expression or command: table
+------------- Table Generation -------------
+Enter an expression: x^2
+Select a variable to change: x
+Select a starting x value: -10
+Select an ending x value: 10
+Select a step size: 5
+
+ x          | y
+------------|-------
+-10         | 100
+-5          | 25
+0           | 0
+5           | 25
+10          | 100
+</code></pre>
+
+<h3>
+<a id="user-content-graph-simple-and-complex-modes" class="anchor" href="http://localhost:5000/#graph-simple-and-complex-modes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graph, Simple and Complex Modes</h3>
+
+<p>This function is very similar to <code>table</code> in terms of inputs and outputs.
+It prompts for:</p>
+
+<ul>
+<li>An expression using <code>x</code> as the independent variable.</li>
+<li>The starting value for <code>x</code>
+</li>
+<li>The ending value for <code>x</code>
+</li>
+<li>The width of the graph (in x-units)</li>
+</ul>
+
+<p>It then draws a rudimentary graph based on the expression.</p>
+
+<p>This is a graph of <code>x^2</code> in <code>complex</code> mode:</p>
+
+<pre><code>Enter an expression or command: graph
+------------- Graph Generation -------------
+** WARNING: Axes may not be to scale. **
+Enter an expression, with variable 'x': x^2
+Select a starting 'x' value: -10
+Select an ending 'x' value: 10
+How wide should the graph be printed?: 10
+
+100.000|\                                                                                /
+ 89.026|                                                                         
+ 78.052|                                                                         
+ 67.078|                                                                         
+ 56.104|         \                                                              /
+ 45.130|                                                                         
+ 34.156|                                                                         
+ 23.182|                  \                                            /         
+ 12.209|                                                                         
+  1.235|                           \        -        -        /                  
+       -------------------------------------------------------------------------------------------
+        -10.00    -7.78    -5.56    -3.33    -1.11     1.11     3.33     5.56     7.78    10.00
+</code></pre>
+
+<p>This is the same graph in <code>simple</code> mode:</p>
+
+<pre><code>Enter an expression or command: graph
+------------- Graph Generation -------------
+** WARNING: Axes may not be to scale. **
+Enter an expression, with variable 'x': x^2
+Select a starting 'x' value: -10
+Select an ending 'x' value: 10
+How wide should the graph be printed?: 10
+
+100.000|*                                                                                *
+ 89.026|                                                                         
+ 78.052|                                                                         
+ 67.078|                                                                         
+ 56.104|         *                                                              *
+ 45.130|                                                                         
+ 34.156|                                                                         
+ 23.182|                  *                                            *         
+ 12.209|                                                                         
+  1.235|                           *        *        *        *                  
+       -------------------------------------------------------------------------------------------
+        -10.00    -7.78    -5.56    -3.33    -1.11     1.11     3.33     5.56     7.78    10.00
+</code></pre>
+
+<h3>
+<a id="user-content-derivative" class="anchor" href="http://localhost:5000/#derivative" aria-hidden="true"><span class="octicon octicon-link"></span></a>Derivative</h3>
+
+<p>This function accepts the following parameters:</p>
+
+<ul>
+<li>An expression with independent variable <code>x</code>
+</li>
+<li>An <code>x</code> value at which to take the derivative</li>
+</ul>
+
+<p>It then calculates the slope at that point using the limit definition of the derivative, where <code>h = 0.0001</code>.
+Since it is not actually taking the limit, but rather calculating the value at a certain <code>h</code>, this will usually be a little bit inaccurate.
+Usually, the inaccuracy is small enough to be disregarded.</p>
+
+<p>This example demonstrates taking the derivative of <code>_e^x</code> at <code>x=0</code>.</p>
+
+<pre><code>Enter an expression or command: derivative
+------------- Derivative Calculator -------------
+** WARNING: This derivative is approximated using h=0.0001. **
+Enter an expression (with variable 'x'): _e^x
+Select an 'x' value: 0
+1.00000000042
+</code></pre>
+
+              </div>
+            </div>
+          </div>
+        
+
+      </div>
+    </div>
+  </div>
+  <div>&nbsp;</div>
+  </div><script>
+    function showCanonicalImages() {
+      var images = document.getElementsByTagName('img');
+      if (!images) {
+        return;
+      }
+      for (var index = 0; index < images.length; index++) {
+        var image = images[index];
+        if (image.getAttribute('data-canonical-src')) {
+          image.src = image.getAttribute('data-canonical-src');
+        }
+      }
+    }
+    function scrollToHash() {
+      if (location.hash && !document.querySelector(":target")) {
+        var elements = document.getElementsByName('user-content-' + location.hash.slice(1));
+        if (elements.length > 0) {
+          elements[elements.length - 1].scrollIntoView();
+        }
+      }
+    }
+    window.onhashchange = function() {
+      scrollToHash();
+    }
+    window.onload = function() {
+      scrollToHash();
+    }
+    showCanonicalImages();
+  </script>
+
+</body></html>
